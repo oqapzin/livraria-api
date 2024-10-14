@@ -1,7 +1,5 @@
 import app from "./src/app.js"
 
-const PORT = 3000
-
-app.listen(PORT, () => {
-    console.log("Servidor escutando!")
+let listener = app.listen(process.env.API_PORT || 3000, () => {
+    console.log("Servidor iniciado na porta "+listener.address().port)
 })
